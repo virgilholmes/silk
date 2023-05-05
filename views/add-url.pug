@@ -1,0 +1,22 @@
+extends layout.pug
+
+block append head
+  title='Add Short URL'
+
+block content
+  h1 Make a Silk URL
+  form(method='POST' action='/add-url')
+    table
+      tr
+        td
+          label.url(for='url') URL: 
+        td
+          input#url.url(type='text', name='url', value=`${url}`)
+      tr
+        td
+          label.code(for='code') Short Code: 
+        td
+          input#code.url(type='text', name='code', value=`${code}`)
+      tr
+        td(colspan="2")
+          button(type='submit') Create

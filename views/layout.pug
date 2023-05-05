@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang='en')
+  head
+    block head
+    link(rel='stylesheet', href='/styles.css')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  body
+    header
+      a(href='/') Home
+    
+      
+      span  | 
+      a(href='/add-url') Add URL
+
+    if errMsg
+      div(class='err') #{errMsg}
+
+    main
+      block content
+    
+    footer
+      div Silk, a project by Virgil Holmes

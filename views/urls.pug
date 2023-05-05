@@ -1,0 +1,28 @@
+extends layout.pug
+
+block append head
+  title='Silk'
+
+block content
+  h1 Your Silks:
+  table.urls
+    thead
+      tr
+        th Original URL
+        th Short URL
+        th Date Created
+        th Visits
+    tbody
+      each url in urls
+        tr
+          td 
+            a(href=`${url.url}` target="_blank") #{url.url}
+          td
+            a.shorturl(href=`${url.shortUrl}` target="_blank" onclick="javascript:openUrl(this)") #{url.shortUrl}
+          td #{url.dateCreated}
+          td #{url.visits}
+  
+  script.
+    function openUrl(link) {
+      setTimeout(() => location.reload(), 500);
+    }

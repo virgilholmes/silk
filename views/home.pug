@@ -1,0 +1,14 @@
+extends layout.pug
+
+block append head
+  title='Slik'
+
+block content
+  h1 Silk, a fast and easy url shorting service
+  ul
+    h3 Our Numbers:
+    li Silk URLs: <b>#{urls.length}</b>
+    li Silk visitors: <b>#{visitors}</b>   
+    h2 Make a Silk Link:
+ 
+    <form method="POST" action="/add-url"><table><tbody><tr><td><label class="url" for="url">URL: </label></td><td><input class="url" id="url" type="text" name="url" value=""></td></tr><tr><td><label class="code" for="code">Silk Code: </label></td><td><input class="url" id="code" type="text" name="code" value="2ApiPw2bC"></td></tr><tr><td colspan="2"><button type="submit">Create</button></td></tr></tbody></table></form>
